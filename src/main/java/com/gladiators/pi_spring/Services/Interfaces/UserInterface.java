@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserInterface {
 
 
-   public User AddUser(User user);
+   public User AddUserAndAffectRole(User user, Long roleId);
    public String deleteUserById(long id);
 
     public User updateUser(User user);

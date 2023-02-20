@@ -14,11 +14,10 @@ public class UserController {
     @Autowired
     UserImp userImp;
 
-    @PostMapping("/signup")
+    @PostMapping("/signup/{idRole}")
     @ResponseBody
-    public User signUp(@RequestBody User user) {
-        userImp.AddUser(user);
-        return user;
+    public User signup(@RequestBody User user , @PathVariable("idRole") Long idRole ) {
+        return  userImp.AddUserAndAffectRole(user,idRole);
     }
 
     @GetMapping("/delete/{id}")
